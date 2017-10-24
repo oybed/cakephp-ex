@@ -20,6 +20,16 @@
   },
   "objects": [
     {
+      "kind": "ImageStream",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "${NAME}",
+        "annotations": {
+          "description": "Keeps track of changes in the application image"
+        }
+      }
+    },
+    {
       "kind": "Secret",
       "apiVersion": "v1",
       "metadata": {

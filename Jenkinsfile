@@ -13,18 +13,8 @@ node() {
         checkout scm
     }
 
-    stage('Build Image') {
+    stage('Build Image and Deploy to Dev') {
         sh "oc start-build ${env.APP_NAME} --from-dir=. --follow"
-    }
-
-    stage ('Deploy to Dev') {
-        input "Promote Application to Dev?"
-
-        openshiftTag (apiURL: "${env.OPENSHIFT_API_URL}", authToken: "${env.OCP_TOKEN}", destStream: "${env.APP_NAME}", destTag: 'latest', destinationAuthToken: "${env.OCP_TOKEN}", destinationNamespace: "${env.DEV_PROJECT}", namespace: "${env.OPENSHIFT_BUILD_NAMESPACE}", srcStream: "${env.APP_NAME}", srcTag: 'latest')
-
-        openshiftTag (apiURL: "${env.OPENSHIFT_API_URL}", authToken: "${env.OCP_TOKEN}", destStream: "${env.APP_NAME}", destTag: 'latest', destinationAuthToken: "${env.OCP_TOKEN}", destinationNamespace: "${env.DEV_PROJECT}", namespace: "${env.OPENSHIFT_BUILD_NAMESPACE}", srcStream: "${env.APP_NAME}", srcTag: 'latest')
-
-        openshiftVerifyDeployment (apiURL: "${env.OPENSHIFT_API_URL}", authToken: "${env.OCP_TOKEN}", depCfg: "${env.APP_NAME}", namespace: "${env.DEV_PROJECT}", verifyReplicaCount: true)
     }
 
     stage ('Deploy to Test') {
