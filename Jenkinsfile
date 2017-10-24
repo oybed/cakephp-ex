@@ -1,5 +1,5 @@
 node ('') {
-    env.OPENSHIFT_BUILD_NAMESPACE = "cakephp-pipeline"
+    env.OPENSHIFT_BUILD_NAMESPACE = "cakephp-dev"
     env.DEV_PROJECT = "cakephp-dev"
     env.TEST_PROJECT = "cakephp-test"
 
