@@ -86,7 +86,7 @@
       "metadata": {
         "name": "${NAME}-pipeline",
         "annotations": {
-          "description": "Pipeline definition"
+          "description": "Pipeline definition",
           "template.alpha.openshift.io/wait-for-ready": "true"
         }
       },
@@ -104,14 +104,13 @@
           "jenkinsPipelineStrategy": {
             "jenkinsfilePath": "Jenkinsfile"
             }
-          }
-        },
-        "postCommit": {}
-        "output": {}
-        "resources": {}
+          },
+        "runPolicy": "Serial",
+        "postCommit": {},
+        "output": {},
+        "resources": {},
         "nodeSelector": {}
-        "runPolicy": "Serial"
-      }
+        }
     },
     {
       "kind": "BuildConfig",
