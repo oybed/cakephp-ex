@@ -274,6 +274,12 @@
       "displayName": "Custom Composer Mirror URL",
       "description": "The custom Composer mirror URL",
       "value": ""
+    },
+    {
+      "name": "PIPELINE_NAMESPACE",
+      "displayName": "Project/Namespace for Pipelines",
+      "description": "The project/namespace where the executing pipelines is deployed.",
+      "value": ""
     }
   ]
 }
