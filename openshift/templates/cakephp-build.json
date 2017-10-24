@@ -85,7 +85,7 @@
           "sourceStrategy": {
             "from": {
               "kind": "ImageStreamTag",
-              "namespace": "${NAMESPACE}",
+              "namespace": "openshift",
               "name": "php:7.0"
             },
             "env":  [
