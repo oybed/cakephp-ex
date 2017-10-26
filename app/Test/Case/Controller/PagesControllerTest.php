@@ -14,6 +14,6 @@ class PagesControllerTest extends ControllerTestCase {
       array('method' => 'get', 'return' => 'contents')
     );
 
-    $this->assertContains('Welcome to your VERY COOL CakePHP application on OpenShift',$result);
+    $this->assertContains('Welcome to your CakePHP application on OpenShift',$result);
   }
 }
